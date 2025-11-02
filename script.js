@@ -1,5 +1,17 @@
 var isDate = function (input) {
   //   write your code here
+	if (input instanceof Date && !isNaN(input)) {
+    return true;
+  }
+
+  // Try to parse if input is a string or number
+  if (typeof input === "string" || typeof input === "number") {
+    const parsedDate = new Date(input);
+    return !isNaN(parsedDate);
+  }
+
+  // For all other types
+  return false;
 };
 
 // Do not change the code below.
